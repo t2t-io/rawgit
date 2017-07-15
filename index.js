@@ -43,6 +43,7 @@ if (process.env.GOOGLE_ANALYTICS_ID) {
 }
 
 app.use(express.static(config.publicDir));
+app.use(require('body-parser').json());
 
 // -- Routes -------------------------------------------------------------------
 app.get('/', (req, res) => {
@@ -56,6 +57,10 @@ app.get('/', (req, res) => {
 
 app.get('/faq', (req, res) => {
   res.redirect('https://github.com/rgrove/rawgit/blob/master/FAQ.md');
+});
+
+app.post('/test', (req, res) => {
+  res.status(200).json(req.body);
 });
 
 // Don't allow requests for Google Webmaster Central verification files.

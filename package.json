@@ -7,6 +7,7 @@
     "express-handlebars": "3.0.0",
     "mime-db": "1.27.0",
     "newrelic": "1.38.2",
+	"body-parser": "1.17.2",
     "on-finished": "2.3.0"
   },
   "devDependencies": {
